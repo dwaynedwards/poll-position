@@ -2,6 +2,23 @@
 
 ## A backend for a Poll-Style app using Node, GraphQL, Prisma and Typscript
 
+## Design Decisions
+
+- Users have to be registered to create and vote on polls
+- On delete mutations, record is set to an inactive state instead of being deleted for historial purposes
+- Once a user has voted on a poll, the can only change their answer and not remove it
+
+## What's Missing
+
+- Ability to update name, email or password
+- Option to publish on polls creation
+- There is no validation on user's or recipient's email strings
+- Preventing the poll owner from changing a option that has already been voted on
+
+## Endpoint
+
+<https://obscure-caverns-87981.herokuapp.com/>
+
 ## Query
 
 ### User Queries
