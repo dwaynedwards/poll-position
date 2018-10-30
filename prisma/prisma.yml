@@ -1,0 +1,13 @@
+endpoint: http://localhost:4466
+datamodel:
+  - types.graphql
+  - enums.graphql
+secret: pollposition123
+
+generate:
+  - generator: typescript-client
+    output: ../src/generated/prisma-client/
+
+hooks:
+  post-deploy:
+    - prisma generate

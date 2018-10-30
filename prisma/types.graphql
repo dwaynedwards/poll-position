@@ -1,0 +1,57 @@
+type User {
+  id: ID! @unique
+  firstName: String!
+  lastName: String!
+  email: String! @unique
+  password: String!
+  polls: [Poll!]! @relation(name: "UserPolls", onDelete: CASCADE)
+  voted: [Poll!]! @relation(name: "UserVoted")
+  votes: [Vote!]! @relation(name: "UserVotes")
+  isActive: Boolean! @default(value: "true")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Poll {
+  id: ID! @unique
+  title: String!
+  description: String!
+  options: [Option!]! @relation(name: "PollOptions", onDelete: CASCADE)
+  recipients: [Recipient!]! @relation(name: "PollRecipients", onDelete: CASCADE)
+  voted: [User!]! @relation(name: "UserVoted", onDelete: CASCADE)
+  creator: User! @relation(name: "UserPolls")
+  access: AccessType! @default(value: "PRIVATE")
+  isPublished: Boolean! @default(value: "false")
+  isClosed: Boolean! @default(value: "false")
+  isActive: Boolean! @default(value: "true")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Recipient {
+  id: ID! @unique
+  email: String!
+  poll: Poll! @relation(name: "PollRecipients")
+  hasSentEmail: Boolean! @default(value: "false")
+}
+
+type Option {
+  id: ID! @unique
+  description: String!
+  votes: [Vote!]! @relation(name: "OptionVotes", onDelete: CASCADE)
+  poll: Poll! @relation(name: "PollOptions")
+  creator: User!
+  isActive: Boolean! @default(value: "true")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
+
+type Vote {
+  id: ID! @unique
+  option: Option! @relation(name: "OptionVotes")
+  poll: Poll!
+  creator: User! @relation(name: "UserVotes", onDelete: CASCADE)
+  isActive: Boolean! @default(value: "true")
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
