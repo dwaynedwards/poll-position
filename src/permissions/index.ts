@@ -112,9 +112,9 @@ export const permissions = shield({
     addPollRecipients: rules.isPollOwner,
     removePollRecipients: rules.isPollOwner,
     updatePollAccess: rules.isPollOwner,
-    createOption: and(rules.isPollOwner, rules.canUpdatePoll),
-    updateOptionDescription: and(rules.isPollOwner, rules.canUpdatePoll),
-    deleteOption: rules.isPollOwner,
+    createPollOptions: and(rules.isPollOwner, rules.canUpdatePoll),
+    updatePollOptionDescription: and(rules.isPollOwner, rules.canUpdatePoll),
+    deletePollOption: rules.isPollOwner,
     createPollVote: and(rules.isAuthorizedUser, rules.canVote),
     updatePollVote: and(rules.isAuthorizedUser, rules.canUpdateVote)
   }
