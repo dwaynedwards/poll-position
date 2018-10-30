@@ -10,6 +10,7 @@
 
 ## What's Missing
 
+- Email logins are case sensitive
 - Ability to update name, email or password
 - Option to publish on polls creation
 - There is no validation on user's or recipient's email strings
