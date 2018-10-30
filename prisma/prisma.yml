@@ -1,8 +1,9 @@
-endpoint: http://localhost:4466
+endpoint: https://poll-position-server.herokuapp.com/poll-position/dev
 datamodel:
   - types.graphql
   - enums.graphql
-secret: pollposition123
+
+secret: MzIxcG9sbHBvc2l0aW9uMTIz
 
 generate:
   - generator: typescript-client

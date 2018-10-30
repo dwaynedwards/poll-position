@@ -2309,7 +2309,7 @@ export type String = string;
 
 export const Prisma = makePrismaClientClass<ClientConstructor<Prisma>>({
   typeDefs,
-  endpoint: `http://localhost:4466`,
-  secret: `pollposition123`
+  endpoint: `https://poll-position-server.herokuapp.com/poll-position/dev`,
+  secret: `MzIxcG9sbHBvc2l0aW9uMTIz`
 });
 export const prisma = new Prisma();

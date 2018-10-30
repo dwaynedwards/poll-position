@@ -8,7 +8,7 @@ services:
     environment:
       PRISMA_CONFIG: |
         port: 4466
-        managementApiSecret: pollposition123
+        managementApiSecret: MzIxcG9sbHBvc2l0aW9uMTIz
         databases:
           default:
             connector: postgres
