@@ -6,6 +6,7 @@ import { AuthPayload } from "./AuthPayload";
 import { User } from "./User";
 import { Poll } from "./Poll";
 import { Option } from "./Option";
+import { Recipient } from "./Recipient";
 import { Vote } from "./Vote";
 
 export const resolvers: Resolvers = {
@@ -15,5 +16,6 @@ export const resolvers: Resolvers = {
   User,
   Poll,
   Option,
+  Recipient,
   Vote
 };
